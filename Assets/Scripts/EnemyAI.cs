@@ -11,13 +11,13 @@ public class EnemyAI : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        player = GameObject.Find("Player").transform;
         timeLeft -= Time.deltaTime;
         if (timeLeft <= 0)
         {

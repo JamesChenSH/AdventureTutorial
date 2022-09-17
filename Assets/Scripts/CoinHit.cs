@@ -18,10 +18,11 @@ public class CoinHit : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log(collision.collider.tag);
         if (collision.collider.tag == "Player")
         {   
-            scoreManager.UpdateScore();
             Destroy(this.gameObject); // destroy this coin
+            scoreManager.UpdateScore();
         }
     }
 }

@@ -31,7 +31,7 @@ public class EnemyAI : MonoBehaviour
         Transform startPos = transform;
         transform.rotation = Quaternion.LookRotation(transform.position - player.position);
         float randpos = Random.Range(0, 180);
-        Debug.Log("random position: " + randpos);
+        // Debug.Log("random position: " + randpos);
         Vector3 eulers = new Vector3( 0, randpos, 0);
         transform.Rotate(eulers);
         //Then we'll get the position on that rotation that's multiplyBy down the path (you could set a Random.range

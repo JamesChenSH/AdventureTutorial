@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CoinHit : MonoBehaviour
 {
-
+    public ScoreManager scoreManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +19,8 @@ public class CoinHit : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.tag == "Player")
-        {
+        {   
+            scoreManager.UpdateScore();
             Destroy(this.gameObject); // destroy this coin
         }
     }

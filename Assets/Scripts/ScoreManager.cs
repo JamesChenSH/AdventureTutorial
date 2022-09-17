@@ -6,6 +6,7 @@ public class ScoreManager : MonoBehaviour
 {
 
     public int playerScore = 0;
+    public UpdatePlayerInfo UpdatePlayerInfo;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,7 @@ public class ScoreManager : MonoBehaviour
     public void UpdateScore()
     {
         playerScore += 1;
+        UpdatePlayerInfo.updateMushroomText();
     }
 
     public int getScore()

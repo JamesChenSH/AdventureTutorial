@@ -9,8 +9,8 @@ public class UpdatePlayerInfo : MonoBehaviour
     private float timerLeft = 120;
     private Text timerText;
     public GameObject playerInventoryObj;
-    private int mushroomCount = 0;
     private Text mushroomText;
+    public ScoreManager scoreManager;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +18,7 @@ public class UpdatePlayerInfo : MonoBehaviour
         timerText = playerTimerObj.GetComponent<Text>();
         initializeTimer();
         mushroomText = playerInventoryObj.GetComponent<Text>();
-        initializeMushroom();
+
     }
 
     public void initializeTimer(){
@@ -30,16 +30,11 @@ public class UpdatePlayerInfo : MonoBehaviour
         timerText.text = "Time Left: " + (int)timerLeft + "s";
     }
 
-    public void initializeMushroom(){
-        mushroomCount = 0;
-        updateMushroomText();
-    }
-
     public void updateMushroomText(){
-            if(mushroomCount > 0 ){
-                mushroomText.text += "Mushroom x" + mushroomCount;
+            if(scoreManager.getScore() > 0 ){
+                mushroomText.text = "Mushroom x" + scoreManager.getScore();
             } else{
-                mushroomText.text += "Empty";
+                mushroomText.text = "Empty";
             }
 
     }
